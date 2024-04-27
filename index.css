@@ -103,8 +103,12 @@ body {
 
     main {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .cont-all {
+            max-width: 1250px;
             padding: 50px;
 
             .cont-animaker {
@@ -201,6 +205,7 @@ body {
 
                             img {
                                 width: 100%;
+                                object-fit: cover;
                                 height: 100%;
                                 border-radius: 10px;
                             }
