@@ -4,6 +4,31 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@keyframes top-nav {
+    to {
+        background-color: rgb(255, 255, 255) !important;
+    }
+}
+
+@keyframes top-header {
+    to {
+        background-color: rgb(255, 255, 255) !important;
+    }
+}
+
+@keyframes top-ul {
+    to {
+        padding: 15px;
+        margin-top: 5px;
+    }
+}
+
+@keyframes top-logo {
+    to {
+        width: 160px;
+    }
+}
+
 body {
     background-color: rgb(0, 0, 0);
     display: flex;
@@ -13,19 +38,30 @@ body {
 
     header {
         width: 100%;
-        background-color: rgb(0, 0, 0);
         color: white;
+        position: sticky !important;
+        animation: top-header linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 200px;
+        top: 0;
 
         nav {
             width: 100%;
             padding-top: 10px;
+            background-color: black;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            animation: top-nav linear both;
+            animation-timeline: scroll(root);
+            animation-range: 0 200px;
 
             img {
                 width: 200px;
+                animation: top-logo linear both;
+                animation-timeline: scroll(root);
+                animation-range: 0 200px;
             }
 
             ul {
@@ -40,6 +76,9 @@ body {
                 height: 20px;
                 display: flex;
                 list-style-type: none;
+                animation: top-ul linear both;
+                animation-timeline: scroll(root);
+                animation-range: 0 200px;
 
                 li a {
                     color: rgb(156, 156, 156);
@@ -69,14 +108,15 @@ body {
             padding: 50px;
 
             .cont-animaker {
-                height: 400px;
-                background-color: rgb(82, 82, 82);
+                height: max-content;
+                /* background-color: rgb(82, 82, 82); */
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                h1 {
-                    color: rgb(192, 192, 192);
+                video {
+                    width: 90%;
+                    border-radius: 10px;
                 }
             }
 
@@ -155,16 +195,102 @@ body {
                             }
                         }
 
-                        .cont-img{
+                        .cont-img {
                             width: 50%;
                             height: 300px;
 
-                            img{
+                            img {
                                 width: 100%;
                                 height: 100%;
                                 border-radius: 10px;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        width: 90%;
+        justify-content: space-around;
+        padding-top: 70px;
+        margin-bottom: 70px;
+        align-items: center;
+        border-top: 1px solid rgb(77, 77, 77);
+
+        .cont-1 {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+            span {
+                margin-bottom: 20px;
+                color: gray;
+            }
+
+            img {
+                width: 300px;
+                margin-left: -5px;
+            }
+
+            .card {
+                display: flex;
+                height: 70px;
+                width: 350px;
+                gap: 10px;
+
+                svg {
+                    color: rgb(255, 255, 255) !important;
+                    fill: rgb(255, 255, 255) !important;
+                    display: flex;
+                    width: 30px;
+                    height: 30px;
+                    z-index: 2;
+                    padding: 0.25rem;
+                    cursor: pointer;
+                }
+
+                a {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    transition: 0.25s;
+                }
+            }
+        }
+
+        .cont-2 {
+            span {
+                color: rgb(255, 255, 255);
+                font-size: 17px;
+                font-weight: bold;
+                margin-left: -17px;
+            }
+
+            .cont-lists{
+                display: flex;
+                gap: 50px;
+            }
+
+            ul {
+                list-style-type: circle;
+                color: white;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                li a {
+                    text-decoration: none;
+                    font-size: 15px;
+                    color: rgb(207, 207, 207);
+
+                    span {
+                        font-size: 14px;
+                        color: rgb(80, 80, 80);
                     }
                 }
             }
